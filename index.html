@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Benoît Paradis — Collection Montréal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1612;
+    --parchment: #f5f0e8;
+    --warm: #c8a96e;
+    --rust: #8b4a2b;
+    --stone: #6b6058;
+    --light-stone: #d4ccc0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Spectral', serif;
+    line-height: 1.7;
+  }
+
+  /* ===== EN-TÊTE DU SITE ===== */
+  .site-header {
+    text-align: center;
+    padding: 90px 24px 50px;
+    border-bottom: 1px solid var(--light-stone);
+  }
+
+  .site-header .kicker {
+    font-family: 'Spectral', serif;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 18px;
+  }
+
+  .site-header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 60px;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+  }
+
+  .site-header .subtitle {
+    margin-top: 16px;
+    font-style: italic;
+    color: var(--stone);
+    font-size: 18px;
+  }
+
+  /* ===== NAVIGATION DES THÈMES ===== */
+  .theme-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    padding: 30px 24px 70px;
+    border-bottom: 1px solid var(--light-stone);
+  }
+
+  .theme-nav a {
+    display: inline-block;
+    padding: 12px 28px;
+    border: 1px solid var(--warm);
+    border-radius: 2px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+
+  .theme-nav a:hover {
+    background: var(--warm);
+    color: var(--parchment);
+  }
+
+  /* ===== EN-TÊTE DE SECTION THÈME ===== */
+  .theme-section-header {
+    text-align: center;
+    padding: 90px 24px 70px;
+    border-bottom: 1px solid var(--light-stone);
+    background: #efe8da;
+  }
+
+  .theme-section-header .kicker {
+    font-family: 'Spectral', serif;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 18px;
+  }
+
+  .theme-section-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 52px;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+  }
+
+  .theme-section-header .subtitle {
+    margin-top: 16px;
+    font-style: italic;
+    color: var(--stone);
+    font-size: 17px;
+  }
+
+  /* ===== FICHE ŒUVRE ===== */
+  .artwork {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 100px 24px;
+    border-bottom: 1px solid var(--light-stone);
+  }
+
+  .theme-block:last-child .artwork:last-child { border-bottom: none; }
+
+  .theme-tag {
+    text-align: center;
+    font-size: 12.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--warm);
+    font-weight: 500;
+    margin-bottom: 22px;
+  }
+
+  .artwork-title {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 44px;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+
+  .meta-block {
+    text-align: center;
+    font-family: 'Spectral', serif;
+    font-size: 16px;
+    color: var(--stone);
+    margin-bottom: 50px;
+    line-height: 1.9;
+  }
+
+  .meta-block .price {
+    color: var(--rust);
+    font-weight: 500;
+  }
+
+  .meta-block .todo {
+    color: #b03a2e;
+    font-weight: 600;
+  }
+
+  .text-fr {
+    font-size: 18px;
+    color: var(--ink);
+    max-width: 700px;
+    margin: 0 auto 30px;
+    text-align: left;
+  }
+
+  .divider-dotted {
+    border: none;
+    border-top: 1px dotted var(--light-stone);
+    max-width: 240px;
+    margin: 36px auto;
+  }
+
+  .text-en {
+    font-style: italic;
+    font-size: 17px;
+    color: var(--stone);
+    max-width: 700px;
+    margin: 0 auto 50px;
+    text-align: left;
+  }
+
+  .main-photo {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .main-photo .img-placeholder {
+    display: inline-block;
+    width: 100%;
+    max-width: 700px;
+    aspect-ratio: 4/5;
+    background: repeating-linear-gradient(
+      45deg, var(--light-stone), var(--light-stone) 10px, #e8e0d4 10px, #e8e0d4 20px
+    );
+    border: 1px solid var(--stone);
+    color: var(--stone);
+    font-family: 'Spectral', serif;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .room-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .room-gallery .img-placeholder {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: repeating-linear-gradient(
+      45deg, var(--light-stone), var(--light-stone) 10px, #ece5d8 10px, #ece5d8 20px
+    );
+    border: 1px solid var(--light-stone);
+    color: var(--stone);
+    font-family: 'Spectral', serif;
+    font-size: 12.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    text-align: center;
+  }
+
+  /* ===== PIED DE PAGE ===== */
+  .site-footer {
+    text-align: center;
+    padding: 60px 24px;
+    color: var(--stone);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+  }
+
+  .site-footer a {
+    color: var(--rust);
+    text-decoration: none;
+  }
+
+  @media (max-width: 600px) {
+    .site-header h1 { font-size: 38px; }
+    .theme-section-header h2 { font-size: 34px; }
+    .artwork-title { font-size: 32px; }
+    .artwork { padding: 70px 18px; }
+    .room-gallery { grid-template-columns: 1fr; }
+    .theme-nav a { padding: 10px 18px; font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="kicker">Benoît Paradis</div>
+  <h1>Collection Montréal</h1>
+  <p class="subtitle">30 toiles — trois regards sur la ville et le territoire</p>
+</header>
+
+<nav class="theme-nav">
+  <a href="#theme1">Montréal, regard d'architecte</a>
+  <a href="#theme2">Dialogue maîtres &amp; territoire</a>
+  <a href="#theme3">Nature &amp; forêt</a>
+</nav>
+
+<!-- ============================================================= -->
+<!-- THÈME 1 — MONTRÉAL, REGARD D'ARCHITECTE -->
+<!-- ============================================================= -->
+<div class="theme-block" id="theme1">
+  <div class="theme-section-header">
+    <div class="kicker">Benoît Paradis &nbsp;·&nbsp; Collection Montréal</div>
+    <h2>Montréal, regard d'architecte</h2>
+    <p class="subtitle">12 toiles — la ville vue à hauteur de toits et de façades</p>
+  </div>
+
+  <section class="artwork" id="oeuvre-02">
+  <div class="theme-tag">Montréal, regard d'architecte</div>
+  <h2 class="artwork-title">La Grande Rouge</h2>
+  <div class="meta-block">
+    36 x 24 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">1 295 $</span>
+  </div>
+
+  <p class="text-fr">Cette maison victorienne du Carré Saint-Louis est l'une des plus photographiées de Montréal — une véritable lady in red du Plateau, avec sa tourelle d'angle et ses lucarnes à fronton sculpté. Le rouge éclatant de ses boiseries claque contre la pierre grise, sous un ciel d'été qui vire au turquoise. L'angle de vue, légèrement en contre-plongée, donne à la façade une présence presque monumentale, comme si la maison elle-même posait pour le portrait.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">This Victorian house on Carré Saint-Louis is one of the most photographed in Montréal — a true lady in red of the Plateau, with its corner turret and sculpted gable dormers. The bright red of its trim snaps against the grey stone, under a summer sky turning almost turquoise. The slightly low-angle view gives the façade an almost monumental presence, as if the house itself were posing for a portrait.</p>
+
+  <div class="main-photo">
+    <div class="img-placeholder">[ IMAGE PRINCIPALE 1500px ]<br>la-grande-rouge_1500.jpg</div>
+  </div>
+
+  <div class="room-gallery">
+    <div class="img-placeholder">[ EN SITUATION 1 ]<br>la-grande-rouge_room1.jpg<br><span style="font-size:10px">(salon classique)</span></div>
+    <div class="img-placeholder">[ EN SITUATION 2 ]<br>la-grande-rouge_room2.jpg<br><span style="font-size:10px">(bureau)</span></div>
+  </div>
+</section>
+
+<section class="artwork" id="oeuvre-03">
+  <div class="theme-tag">Montréal, regard d'architecte</div>
+  <h2 class="artwork-title">À l'Étage</h2>
+  <div class="meta-block">
+    36 x 24 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">1 295 $</span>
+  </div>
+
+  <p class="text-fr">Vue du dessous, à travers les feuilles d'un érable urbain, la tourelle de pierre grise de cette élégante maison historique du Carré Saint-Louis — l'une des plus photographiées de Montréal — se découpe contre un ciel bleu franc. Le regard grimpe naturellement du feuillage vert tendre vers le clocheton, exactement le réflexe d'un œil habitué à lire des plans en élévation. Les détails architecturaux sont traités avec la précision d'un relevé technique, mais baignés d'une lumière qui n'appartient qu'à la peinture.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">Seen from below, through the leaves of an urban maple, the grey stone turret of this elegant historic house on Carré Saint-Louis — one of the most photographed in Montréal — stands out against a clear blue sky. The eye naturally climbs from the soft green foliage toward the bell tower, exactly the reflex of an eye trained to read elevation drawings. The architectural details are rendered with the precision of a technical survey, yet bathed in a light that belongs only to painting.</p>
+
+  <div class="main-photo">
+    <div class="img-placeholder">[ IMAGE PRINCIPALE 1500px ]<br>a-letage_1500.jpg</div>
+  </div>
+
+  <div class="room-gallery">
+    <div class="img-placeholder">[ EN SITUATION 1 ]<br>a-letage_room1.jpg<br><span style="font-size:10px">(mur noir, salon)</span></div>
+    <div class="img-placeholder">[ EN SITUATION 2 ]<br>a-letage_room2.jpg<br><span style="font-size:10px">(mur gris, console)</span></div>
+  </div>
+</section>
+
+<section class="artwork" id="oeuvre-04">
+  <div class="theme-tag">Montréal, regard d'architecte</div>
+  <h2 class="artwork-title">Regard Perçant</h2>
+  <div class="meta-block">
+    24 x 18 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">675 $</span>
+  </div>
+
+  <p class="text-fr">Au 3679 avenue Laval, dans le Square Bohème du Plateau tout près du Carré Saint-Louis, cette façade victorienne verte aux boiseries travaillées semble nous observer autant qu'on l'observe. Ses fenêtres deviennent des yeux, son large porche à colonnades une expression figée dans le temps — et un hibou de bois, accroché près de l'entrée, veille lui aussi sur la rue, ajoutant son propre regard perçant à celui de la maison.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">At 3679 avenue Laval, in the Plateau's Square Bohème, just steps from Carré Saint-Louis, this green Victorian façade with its ornate woodwork seems to watch us as much as we watch it. Its windows become eyes, its wide colonnaded porch an expression frozen in time — and a wooden owl, perched near the entrance, keeps its own watch over the street, adding its piercing gaze to that of the house.</p>
+
+  <div class="main-photo">
+    <div class="img-placeholder">[ IMAGE PRINCIPALE 1500px ]<br>regard-percant_1500.jpg</div>
+  </div>
+
+  <div class="room-gallery">
+    <div class="img-placeholder">[ EN SITUATION 1 ]<br>regard-percant_room1.jpg<br><span style="font-size:10px">(mur gris, lampe trépied)</span></div>
+    <div class="img-placeholder">[ EN SITUATION 2 ]<br>regard-percant_room2.jpg<br><span style="font-size:10px">(mur blanc, chaise longue)</span></div>
+  </div>
+</section>
+
+<section class="artwork" id="oeuvre-05">
+  <div class="theme-tag">Montréal, regard d'architecte</div>
+  <h2 class="artwork-title">Coin Orange</h2>
+  <div class="meta-block">
+    24 x 18 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">675 $</span>
+  </div>
+
+  <p class="text-fr">Un balcon de fer forgé, débordant de fleurs roses et de vignes vertes, se découpe contre un mur orange brûlé qui occupe presque tout le cadre. La composition est volontairement audacieuse — peu de ciel, peu de contexte — pour que cette seule explosion de couleur chaude transforme un simple balcon montréalais en pièce presque abstraite.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">A wrought-iron balcony, overflowing with pink flowers and green vines, stands out against a burnt-orange wall that fills nearly the entire frame. The composition is deliberately bold — little sky, little context — so that this single explosion of warm colour transforms an ordinary Montréal balcony into an almost abstract piece.</p>
+
+  <div class="main-photo">
+    <div class="img-placeholder">[ IMAGE PRINCIPALE 1500px ]<br>coin-orange_1500.jpg</div>
+  </div>
+
+  <div class="room-gallery">
+    <div class="img-placeholder">[ EN SITUATION 1 ]<br>coin-orange_room1.jpg<br><span style="font-size:10px">(mur bleu-gris)</span></div>
+    <div class="img-placeholder">[ EN SITUATION 2 ]<br>coin-orange_room2.jpg<br><span style="font-size:10px">(mur gris, cheminée)</span></div>
+  </div>
+</section>
+
+<section class="artwork" id="oeuvre-06">
+  <div class="theme-tag">Montréal, regard d'architecte</div>
+  <h2 class="artwork-title">Sul' Plateau</h2>
+  <div class="meta-block">
+    36 x 24 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">1 295 $</span>
+  </div>
+
+  <p class="text-fr">Cette demeure du 3839 avenue Laval, typique du Plateau-Mont-Royal, respire le caractère en embrassant pleinement ses imperfections. Un escalier extérieur, ombragé par un érable dont les feuilles vert tendre filtrent la lumière jusqu'au numéro civique peint sur la porte orange. Cette composition existait d'abord en aquarelle — la première œuvre vendue de Benoît, lors de sa première exposition à la Maison Antoine-Lacombe de Joliette en 2016. Cette version à l'acrylique reprend cette même architecture chaleureuse, dans l'espoir de trouver, elle aussi, preneur.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">This home on avenue Laval, typical of the Plateau-Mont-Royal, wears its character openly, embracing its imperfections fully. An exterior staircase, shaded by a maple whose tender green leaves filter the light down to the house number painted on the orange door. This composition first existed as a watercolour — Benoît's very first sale, at his first-ever exhibition at the Maison Antoine-Lacombe in Joliette in 2016. This acrylic version revisits that same warm architecture, hoping it too will find a home.</p>
+
+  <div class="main-photo">
+    <div class="img-placeholder">[ IMAGE PRINCIPALE 1500px ]<br>sul-plateau_1500.jpg</div>
+  </div>
+
+  <div class="room-gallery">
+    <div class="img-placeholder">[ EN SITUATION 1 ]<br>sul-plateau_room1.jpg<br><span style="font-size:10px">(salle d'attente)</span></div>
+    <div class="img-placeholder">[ EN SITUATION 2 ]<br>sul-plateau_room2.jpg<br><span style="font-size:10px">(mur beige)</span></div>
+  </div>
+</section>
+
+<section class="artwork" id="oeuvre-07">
+  <div class="theme-tag">Montréal, regard d'architecte</div>
+  <h2 class="artwork-title">Fenêtre sur René</h2>
+  <div class="meta-block">
+    18 x 24 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">675 $</span>
+  </div>
+
+  <p class="text-fr">Une fenêtre patrimoniale aux volets blancs entrouverts flotte dans un ciel rempli de nuages — sans mur, sans façade autour, juste le bleu et le blanc à perte de vue. Cette toile est née d'un jumelage entre peintres et photographes du Club photo de Boisbriand, lors de l'édition 2017 du « Déclic du pinceau », à partir d'une photo de Marc-André Thibodeau intitulée <em>Fenêtre de Normandie</em>. Benoît en a changé le point de vue et amplifié la perspective — une fenêtre extérieure donnant sur l'extérieur, un hommage assumé à René Magritte. Une fenêtre ouverte sur le rêve : sky is no limit.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">A heritage window with white shutters left ajar floats in a sky full of clouds — no wall, no façade around it, just blue and white as far as the eye can see. This painting was born from a pairing exercise between painters and photographers from the Boisbriand Photo Club, during the 2017 edition of "Déclic du pinceau," based on a photograph by Marc-André Thibodeau titled <em>Fenêtre de Normandie</em>. Benoît shifted the viewpoint and heightened the perspective — an exterior window looking out onto the exterior, a deliberate nod to René Magritte. A window opened onto a dream: sky is no limit.</p>
+
+  <div class="main-photo">
+    <div class="img-placeholder">[ IMAGE PRINCIPALE 1500px ]<br>fenetre-sur-rene_1500.jpg</div>
+  </div>
+
+  <div class="room-gallery">
+    <div class="img-placeholder">[ EN SITUATION 1 ]<br>fenetre-sur-rene_room1.jpg<br><span style="font-size:10px">(près d'un piano)</span></div>
+    <div class="img-placeholder">[ EN SITUATION 2 ]<br>fenetre-sur-rene_room2.jpg<br><span style="font-size:10px">(mur beige)</span></div>
+  </div>
+</section>
+
+<section class="artwork" id="oeuvre-08">
+  <div class="theme-tag">Montréal, regard d'architecte</div>
+  <h2 class="artwork-title">Premier Juillet QC</h2>
+  <div class="meta-block">
+    40 x 30 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">1 725 $</span>
+  </div>
+
+  <p class="text-fr">Jour de déménagement à Rosemont–La Petite-Patrie. Des déménageurs grimpent un escalier avec un réfrigérateur, profitant de l'ombre fraîche d'un érable aux feuilles jaune-vert, sous le regard amusé d'une nouvelle voisine. Au bout de la rue bordée de maisons bleu et rouge brique, le campanile de l'église Saint-Ambroise domine la scène — ce moment précis, chaque 1er juillet, où Montréal change de visage, rue par rue.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">Moving day in Rosemont–La Petite-Patrie. Movers climb a staircase carrying a refrigerator, grateful for the cool shade of a maple with yellow-green leaves, under the amused gaze of a new neighbour. At the end of a street lined with blue and red-brick houses, the bell tower of Saint-Ambroise church presides over the scene — that precise moment, every July 1st, when Montréal changes face, street by street.</p>
+
+  <div class="main-photo">
+    <div class="img-placeholder">[ IMAGE PRINCIPALE 1500px ]<br>premier-juillet-qc_1500.jpg</div>
+  </div>
+
+  <div class="room-gallery">
+    <div class="img-placeholder">[ EN SITUATION 1 ]<br>premier-juillet-qc_room1.jpg<br><span style="font-size:10px">(salon vert moderne)</span></div>
+    <div class="img-placeholder">[ EN SITUATION 2 ]<br>premier-juillet-qc_room2.jpg<br><span style="font-size:10px">(mur béton)</span></div>
+  </div>
+</section>
+
+<section class="artwork" id="oeuvre-09">
+  <div class="theme-tag">Montréal, regard d'architecte</div>
+  <h2 class="artwork-title">La Factrice</h2>
+  <div class="meta-block">
+    48 x 36 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">2 350 $</span>
+  </div>
+
+  <p class="text-fr">Au 6604 rue Chabot, dans Rosemont–La Petite-Patrie, ce duplex affiche fièrement sa borne-fontaine rouge vif en premier plan, contre le jaune pâle de la façade et le vert grimpant de la vigne. Une factrice glisse le courrier dans la fente de la porte — un geste minuscule, presque anecdotique, mais peut-être bientôt un souvenir du passé, à mesure que les boîtes postales communautaires deviennent la norme au pays, nous privant de ce service souvent assorti d'un vrai contact humain.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">At 6604 rue Chabot, in Rosemont–La Petite-Patrie, this duplex proudly displays its bright red fire hydrant in the foreground, against the pale yellow façade and the climbing green vine. A letter carrier slips the mail through the door slot — a tiny, almost incidental gesture, but perhaps soon a thing of the past, as community mailboxes become the norm across the country, depriving us of a service often paired with genuine human contact.</p>
+
+  <div class="main-photo">
+    <div class="img-placeholder">[ IMAGE PRINCIPALE 1500px ]<br>la-factrice_1501.jpg</div>
+  </div>
+
+  <div class="room-gallery">
+    <div class="img-placeholder">[ EN SITUATION 1 ]<br>la-factrice_room-grey.jpg<br><span style="font-size:10px">(salon gris clair, bibliothèques)</span></div>
+    <div class="img-placeholder">[ EN SITUATION 2 ]<br>la-factrice_room-white.jpg<br><span style="font-size:10px">(salon blanc moderne)</span></div>
+  </div>
+</section>
+
+<section class="artwork" id="oeuvre-11">
+  <div class="theme-tag">Montréal, regard d'architecte</div>
+  <h2 class="artwork-title">Parc Molson</h2>
+  <div class="meta-block">
+    24 x 18 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">675 $</span>
+  </div>
+
+  <p class="text-fr">Le soir, dans le parc Molson de Rosemont–La Petite-Patrie : une invitation à s'asseoir, se détendre et se laisser absorber par le son et l'ambiance de la ville. Les lampadaires déjà allumés percent la pénombre dorée sous une voûte d'érables embrasés de jaune et d'orange — le regard happé vers le haut, dans cette explosion de couleur qui transforme une promenade de quartier en cathédrale végétale.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">Evening in Parc Molson, Rosemont–La Petite-Patrie: an invitation to sit down, relax, and let yourself be absorbed by the sound and atmosphere of the city. Streetlamps already lit pierce the golden dusk beneath a canopy of maples ablaze with yellow and orange — the eye drawn upward, into an explosion of colour that turns a neighbourhood stroll into a leafy cathedral.</p>
+
+  <div class="main-photo">
+    <div class="img-placeholder">[ IMAGE PRINCIPALE 1500px ]<br>parc-molson_1500.jpg</div>
+  </div>
+
+  <div class="room-gallery">
+    <div class="img-placeholder">[ EN SITUATION 1 ]<br>parc-molson_room1.jpg<br><span style="font-size:10px">(mur beige, console)</span></div>
+    <div class="img-placeholder">[ EN SITUATION 2 ]<br>parc-molson_room2.jpg<br><span style="font-size:10px">(mur sarcelle, théière)</span></div>
+  </div>
+</section>
+
+<section class="artwork" id="oeuvre-12">
+  <div class="theme-tag">Montréal, regard d'architecte</div>
+  <h2 class="artwork-title">La Mignonne sur Brébeuf</h2>
+  <div class="meta-block">
+    24 x 18 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">675 $</span>
+  </div>
+
+  <p class="text-fr">Au 4295 rue de Brébeuf, tout juste au nord du parc Lafontaine, cette maison à la galerie de bois bleu et au toit de tôle pentu se découpe sous un ciel orange embrasé par des feuillages rouge sang. Le contraste entre le bleu froid de la façade et la chaleur ardente du ciel d'automne donne à cette petite résidence un caractère presque théâtral.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">At 4295 rue de Brébeuf, just north of Parc Lafontaine, this house with its blue wooden gallery and steep tin roof stands beneath an orange sky set ablaze by blood-red foliage. The contrast between the façade's cool blue and the fiery warmth of the autumn sky gives this small residence an almost theatrical character.</p>
+
+  <div class="main-photo">
+    <div class="img-placeholder">[ IMAGE PRINCIPALE 1500px ]<br>la-mignonne-brebeuf_1500.jpg</div>
+  </div>
+
+  <div class="room-gallery">
+    <div class="img-placeholder">[ EN SITUATION 1 ]<br>la-mignonne-brebeuf_room1.jpg<br><span style="font-size:10px">(chambre à coucher)</span></div>
+    <div class="img-placeholder">[ EN SITUATION 2 ]<br>la-mignonne-brebeuf_room2.jpg<br><span style="font-size:10px">(étagère, roses)</span></div>
+  </div>
+</section>
+
+<section class="artwork" id="oeuvre-13">
+  <div class="theme-tag">Montréal, regard d'architecte</div>
+  <h2 class="artwork-title">À l'Ouest du Parc</h2>
+  <div class="meta-block">
+    30 x 40 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">1 725 $</span>
+  </div>
+
+  <p class="text-fr">Inspirée par les maisons en bordure ouest du parc Lafontaine, cette rangée victorienne du Plateau affiche chacune sa couleur propre — jaune éclatant, bleu, blanc — sous un ciel nocturne enflammé d'orange et de violet. Les bâtiments semblent presque danser dans cette lumière de fin de soirée, comme si l'architecture elle-même se laissait emporter par la chaleur de l'été.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">Inspired by the houses lining the western edge of Parc Lafontaine, this row of Victorian Plateau homes each shows off its own colour — bright yellow, blue, white — under a night sky ablaze with orange and violet. The buildings seem almost to dance in this late evening light, as if the architecture itself had been swept up by the warmth of summer.</p>
+
+  <div class="main-photo">
+    <div class="img-placeholder">[ IMAGE PRINCIPALE 1500px ]<br>a-louest-du-parc_1500.jpg</div>
+  </div>
+
+  <div class="room-gallery">
+    <div class="img-placeholder">[ EN SITUATION 1 ]<br>a-louest-du-parc_room1.jpg<br><span style="font-size:10px">(salon gris)</span></div>
+    <div class="img-placeholder">[ EN SITUATION 2 ]<br>a-louest-du-parc_room2.jpg<br><span style="font-size:10px">(salon beige)</span></div>
+  </div>
+</section>
+
+</div>
+
+<!-- ============================================================= -->
+<!-- THÈME 2 — DIALOGUE MAÎTRES & TERRITOIRE -->
+<!-- ============================================================= -->
+<div class="theme-block" id="theme2">
+  <div class="theme-section-header">
+    <div class="kicker">Benoît Paradis &nbsp;·&nbsp; Collection Montréal</div>
+    <h2>Dialogue maîtres &amp; territoire</h2>
+    <p class="subtitle">5 toiles — quand les grands maîtres rencontrent le réel</p>
+  </div>
+
+  <section class="artwork" id="oeuvre-27">
+  <div class="theme-tag">Dialogue maîtres &amp; territoire</div>
+  <h2 class="artwork-title">Viollet-le-Duc Wave</h2>
+  <div class="meta-block">
+    36 x 48 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">2 350 $</span>
+  </div>
+
+  <p class="text-fr">Une vague atlantique peinte d'instinct vient percuter un motif ornemental directement inspiré des relevés architecturaux d'Eugène Viollet-le-Duc — rouge profond, bleu ardoise et or se répétant en un réseau géométrique presque hypnotique. Deux univers qui n'auraient jamais dû se rencontrer, la rigueur du dessin patrimonial et la fureur indisciplinée de l'écume blanche, entrent ici en collision. Ce n'est pas une copie des maîtres : c'est un dialogue, où la structure contient le mouvement sans jamais l'étouffer.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">An instinctively painted Atlantic wave crashes into an ornamental motif drawn directly from Eugène Viollet-le-Duc's architectural surveys — deep red, slate blue, and gold repeating in an almost hypnotic geometric network. Two worlds that should never have met — the rigour of heritage drawing and the untamed fury of white foam — collide here. This is not a copy of the masters: it is a dialogue, where structure contains movement without ever smothering it.</p>
+
+  <div class="main-photo">
+    <div class="img-placeholder">[ IMAGE PRINCIPALE 1500px ]<br>viollet-le-duc-wave_1501.jpg</div>
+  </div>
+
+  <div class="room-gallery">
+    <div class="img-placeholder">[ EN SITUATION 1 ]<br>viollet-wave_room-office.jpg<br><span style="font-size:10px">(mur réception bois)</span></div>
+    <div class="img-placeholder">[ EN SITUATION 2 ]<br>viollet-wave_room-reception.jpg<br><span style="font-size:10px">(à confirmer)</span></div>
+  </div>
+</section>
+
+<section class="artwork" id="oeuvre-14">
+  <div class="theme-tag">Dialogue maîtres &amp; territoire</div>
+  <h2 class="artwork-title">Bonsecours</h2>
+  <div class="meta-block">
+    36 x 36 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">1 825 $</span>
+  </div>
+
+  <p class="text-fr">La chapelle Notre-Dame-de-Bon-Secours, la plus ancienne chapelle en pierre de Montréal, fut commandée par Marguerite Bourgeoys — première éducatrice de Ville-Marie et fondatrice de la Congrégation de Notre-Dame — en 1655. Cette toile capture tout l'attrait du Vieux-Montréal : les pavés colorés des rues Bonsecours et Saint-Paul, le clocher qui veille sous un ciel d'été traversé d'hirondelles, et le restaurant Les Filles du Roy au premier plan, ancré dans la vraie vie de ce quartier historique.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">The Notre-Dame-de-Bon-Secours chapel, the oldest stone chapel in Montréal, was commissioned by Marguerite Bourgeoys — Ville-Marie's first educator and founder of the Congrégation de Notre-Dame — in 1655. This painting captures the full charm of Old Montréal: the colourful cobblestones of rue Bonsecours and rue Saint-Paul, the bell tower watching over a summer sky crossed by swallows, and the restaurant Les Filles du Roy in the foreground, grounded in the real life of this historic quarter.</p>
+
+  <div class="main-photo">
+    <div class="img-placeholder">[ IMAGE PRINCIPALE 1500px ]<br>bonsecours_1500.jpg</div>
+  </div>
+
+  <div class="room-gallery">
+    <div class="img-placeholder">[ EN SITUATION 1 ]<br>bonsecours_room1.jpg<br><span style="font-size:10px">(salon, banc bois)</span></div>
+    <div class="img-placeholder">[ EN SITUATION 2 ]<br>bonsecours_room2.jpg<br><span style="font-size:10px">(mur blanc)</span></div>
+  </div>
+</section>
+
+<section class="artwork" id="oeuvre-15">
+  <div class="theme-tag">Dialogue maîtres &amp; territoire</div>
+  <h2 class="artwork-title">Quai de l'Horloge, Montréal</h2>
+  <div class="meta-block">
+    30 x 48 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">1 975 $</span>
+  </div>
+
+  <p class="text-fr">Le centre-ville de Montréal, vu depuis l'île Sainte-Hélène, s'embrase d'un coucher de soleil orange qui occupe tout le ciel. La composition a été modifiée en souvenir de la mère de Benoît : à gauche, l'édifice Aldred se reflète dans la tour de la Banque Nationale — deux édifices où elle a travaillé. La tour de l'Horloge domine la silhouette, exactement là où les premiers arrivants de la ville auraient découvert ce skyline pour la première fois.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">Downtown Montréal, seen from Île Sainte-Hélène, blazes under an orange sunset that fills the entire sky. The composition was altered in memory of Benoît's mother: on the left, the Aldred Building reflects in the National Bank tower — two buildings where she once worked. The Clock Tower dominates the skyline, exactly where the city's first arrivals would have caught their first glimpse of it.</p>
+
+  <div class="main-photo">
+    <div class="img-placeholder">[ IMAGE PRINCIPALE 1500px ]<br>quai-horloge_1500.jpg</div>
+  </div>
+
+  <div class="room-gallery">
+    <div class="img-placeholder">[ EN SITUATION 1 ]<br>quai-horloge_room1.jpg<br><span style="font-size:10px">(salle de conférence)</span></div>
+    <div class="img-placeholder">[ EN SITUATION 2 ]<br>quai-horloge_room2.jpg<br><span style="font-size:10px">(salon moderne, briques)</span></div>
+  </div>
+</section>
+
+<section class="artwork" id="oeuvre-16">
+  <div class="theme-tag">Dialogue maîtres &amp; territoire</div>
+  <h2 class="artwork-title">La Dame de Maisonneuve</h2>
+  <div class="meta-block">
+    24 x 36 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">1 295 $</span>
+  </div>
+
+  <p class="text-fr">La basilique Notre-Dame veille sur la Place d'Armes, ses tours néo-gothiques dorées par la lumière de fin de journée. Au premier plan, la statue de Paul de Chomedey de Maisonneuve — œuvre du sculpteur Louis-Philippe Hébert, installée en 1895 — brandit son étendard. Un symbole de l'histoire fondatrice et grandiose de Montréal, traité avec la précision technique d'un relevé architectural.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">Notre-Dame Basilica watches over Place d'Armes, its neo-Gothic towers gilded by the late-day light. In the foreground, the statue of Paul de Chomedey de Maisonneuve — sculpted by Louis-Philippe Hébert, installed in 1895 — raises his banner. A symbol of Montréal's grand founding history, rendered with the technical precision of an architectural survey.</p>
+
+  <div class="main-photo">
+    <div class="img-placeholder">[ IMAGE PRINCIPALE 1500px ]<br>dame-maisonneuve_1500.jpg</div>
+  </div>
+
+  <div class="room-gallery">
+    <div class="img-placeholder">[ EN SITUATION 1 ]<br>dame-maisonneuve_room1.jpg<br><span style="font-size:10px">(salon cuir rouge)</span></div>
+    <div class="img-placeholder">[ EN SITUATION 2 ]<br>dame-maisonneuve_room2.jpg<br><span style="font-size:10px">(salon gris)</span></div>
+  </div>
+</section>
+
+<section class="artwork" id="oeuvre-18">
+  <div class="theme-tag">Dialogue maîtres &amp; territoire</div>
+  <h2 class="artwork-title">Via Champlain</h2>
+  <div class="meta-block">
+    24 x 48 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">1 675 $</span>
+  </div>
+
+  <p class="text-fr">Le skyline de Montréal, vu depuis le pont Champlain, se découpe avec minutie sous un coucher de soleil saisissant. Au-dessus, de larges bandes de bleu profond ondulent comme des courants — un geste presque abstrait au-dessus d'une ville rendue avec rigueur. Une œuvre distinctive, pensée pour créer un impact puissant dans un bureau ou un salon.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">Montréal's skyline, seen from the Champlain Bridge, is rendered with great care beneath a striking sunset. Above it, broad bands of deep blue ripple like currents — an almost abstract gesture above a city painted with rigour. A distinctive piece, designed to make a powerful impact in an office or living room.</p>
+
+  <div class="main-photo">
+    <div class="img-placeholder">[ IMAGE PRINCIPALE 2000px ]<br>via-champlain_2000.jpg</div>
+  </div>
+
+  <div class="room-gallery">
+    <div class="img-placeholder">[ EN SITUATION 1 ]<br>via-champlain_room1.jpg<br><span style="font-size:10px">(salon blanc moderne)</span></div>
+    <div class="img-placeholder">[ EN SITUATION 2 ]<br>via-champlain_room2.jpg<br><span style="font-size:10px">(bureau, mur béton)</span></div>
+  </div>
+</section>
+
+</div>
+
+<!-- ============================================================= -->
+<!-- THÈME 3 — NATURE & FORÊT -->
+<!-- ============================================================= -->
+<div class="theme-block" id="theme3">
+  <div class="theme-section-header">
+    <div class="kicker">Benoît Paradis &nbsp;·&nbsp; Collection Montréal</div>
+    <h2>Nature &amp; forêt</h2>
+    <p class="subtitle">13 toiles — le territoire au-delà de la ville</p>
+  </div>
+
+  <section class="artwork" id="oeuvre-10">
+  <div class="theme-tag">Nature &amp; forêt</div>
+  <h2 class="artwork-title">Pratto</h2>
+  <div class="meta-block">
+    36 x 48 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">2 350 $</span>
+  </div>
+
+  <p class="text-fr">Pratto, l'ancien nom du Rocher Percé en Gaspésie, à l'époque où la formation rocheuse de 475 mètres comptait deux arches. Le nom vient de Cap Pratto — le cap du pré, en espagnol — donné par les pêcheurs basques qui fréquentaient ces eaux bien avant l'arrivée de Jacques Cartier. Ce point de vue précis n'est accessible que par bateau : le turquoise profond de l'eau, les ocres et les mauves de la roche composent un réalisme immersif et saisissant.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">Pratto, the former name of Percé Rock in the Gaspé, from a time when the 475-metre rock formation still had two arches. The name comes from Cap Pratto — cape of the meadow, in Spanish — given by the Basque fishermen who worked these waters long before Jacques Cartier's arrival. This precise vantage point is only reachable by boat: the deep turquoise of the water, the ochres and mauves of the rock, compose an immersive and striking realism.</p>
+
+  <div class="main-photo">
+    <img src="images/pratto_1500.jpg" alt="Pratto" style="max-width:700px; width:100%; height:auto; display:block; margin:0 auto;">
+  </div>
+
+  <div class="room-gallery">
+    <img src="images/pratto_room1.jpg" alt="Pratto en situation 1" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--light-stone);">
+    <img src="images/pratto_room2.jpg" alt="Pratto en situation 2" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--light-stone);">
+  </div>
+</section>
+
+<section class="artwork" id="oeuvre-17">
+  <div class="theme-tag">Nature &amp; forêt</div>
+  <h2 class="artwork-title">En Amour sur la Côte Est</h2>
+  <div class="meta-block">
+    36 x 24 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">1 295 $</span>
+  </div>
+
+  <p class="text-fr">Un coucher de soleil sur la côte atlantique, ciel zébré de rose et de mauve se reflétant dans une eau d'un calme parfait. Au premier plan, un amas de bouées et de cordages abandonnés forme une silhouette presque sculpturale — la beauté grandiose du paysage et les traces modestes du travail maritime, côte à côte, sans hiérarchie entre elles.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">A sunset over the Atlantic coast, sky streaked with pink and mauve reflecting in perfectly calm water. In the foreground, a tangle of abandoned buoys and ropes forms an almost sculptural silhouette — the grandeur of the landscape and the modest traces of maritime work, side by side, without hierarchy between them.</p>
+
+  <div class="main-photo">
+    <img src="images/en-amour-cote-est_1500.jpg" alt="En Amour sur la Côte Est" style="max-width:700px; width:100%; height:auto; display:block; margin:0 auto;">
+  </div>
+
+  <div class="room-gallery">
+    <img src="images/en-amour-cote-est_room1.jpg" alt="En Amour sur la Côte Est en situation 1" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--light-stone);">
+    <img src="images/en-amour-cote-est_room2.jpg" alt="En Amour sur la Côte Est en situation 2" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--light-stone);">
+  </div>
+</section>
+
+<section class="artwork" id="oeuvre-19">
+  <div class="theme-tag">Nature &amp; forêt</div>
+  <h2 class="artwork-title">Sous le Grand Marronnier</h2>
+  <div class="meta-block">
+    36 x 24 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">1 295 $</span>
+  </div>
+
+  <p class="text-fr">Un marronnier en pleine floraison, ses grappes de feuilles orangées allumées comme des lanternes contre un ciel bleu profond, abrite une balançoire de bois où un enfant reste absorbé dans sa lecture. Une scène d'enfance suspendue dans le temps, où l'arbre devient gardien plutôt que simple décor.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">A chestnut tree in full bloom, its orange leaf clusters glowing like lanterns against a deep blue sky, shelters a wooden swing where a child stays absorbed in a book. A childhood scene suspended in time, where the tree becomes a guardian rather than mere backdrop.</p>
+
+  <div class="main-photo">
+    <img src="images/sous-grand-marronnier_1500.jpg" alt="Sous le Grand Marronnier" style="max-width:700px; width:100%; height:auto; display:block; margin:0 auto;">
+  </div>
+
+  <div class="room-gallery">
+    <img src="images/sous-grand-marronnier_room1.jpg" alt="Sous le Grand Marronnier en situation 1" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--light-stone);">
+    <img src="images/sous-grand-marronnier_room2.jpg" alt="Sous le Grand Marronnier en situation 2" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--light-stone);">
+  </div>
+</section>
+
+<section class="artwork" id="oeuvre-20">
+  <div class="theme-tag">Nature &amp; forêt</div>
+  <h2 class="artwork-title">Morgan</h2>
+  <div class="meta-block">
+    36 x 24 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">1 295 $</span>
+  </div>
+
+  <p class="text-fr">L'Arboretum Morgan, réserve forestière de 245 hectares à l'extrémité ouest de l'île de Montréal, à Sainte-Anne-de-Bellevue, fait partie du campus Macdonald de l'Université McGill depuis 1945 — institution locale appréciée pour la sensibilisation à la nature et les loisirs de plein air. Dans cette toile, un grand conifère vert profond se dresse, droit et imposant, devant un petit pavillon à demi caché par le feuillage. La composition verticale serrée lui donne une présence presque architecturale, un pilier vivant aussi structurant qu'une colonne.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">The Morgan Arboretum, a 245-hectare forest reserve at the western tip of the island of Montréal, in Sainte-Anne-de-Bellevue, has been part of McGill University's Macdonald Campus since 1945 — a beloved local institution for nature education and outdoor recreation. In this painting, a tall, deep-green conifer stands straight and commanding before a small cottage half-hidden by foliage. The tight vertical composition gives the tree an almost architectural presence, a living pillar as structural as a column.</p>
+
+  <div class="main-photo">
+    <img src="images/morgan_1500.jpg" alt="Morgan" style="max-width:700px; width:100%; height:auto; display:block; margin:0 auto;">
+  </div>
+
+  <div class="room-gallery">
+    <img src="images/morgan_room1.jpg" alt="Morgan en situation 1" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--light-stone);">
+    <img src="images/morgan_room2.jpg" alt="Morgan en situation 2" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--light-stone);">
+  </div>
+</section>
+
+<section class="artwork" id="oeuvre-21">
+  <div class="theme-tag">Nature &amp; forêt</div>
+  <h2 class="artwork-title">Méditation</h2>
+  <div class="meta-block">
+    36 x 24 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">1 295 $</span>
+  </div>
+
+  <p class="text-fr">L'inspiration de cette toile est née dans la profusion de teintes vertes des arbres de l'Arboretum Morgan et la beauté du sol forestier, où la dense canopée crée un cadre presque imperméable à la lumière directe du soleil. Les troncs gris filent vers un ciel filtré de vert et d'or, capturant l'ambiance apaisante d'un environnement ombragé — un sentiment de paix et de connexion avec la nature, dans l'esprit même du Shinrin Yoku, l'art japonais du bain de forêt.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">The inspiration for this painting came from the profusion of green tones among the trees of the Morgan Arboretum and the beauty of the forest floor, where the dense canopy creates a setting almost impenetrable to direct sunlight. Grey trunks rise toward a sky filtered through green and gold, capturing the soothing atmosphere of a shaded environment — a sense of peace and connection with nature, very much in the spirit of Shinrin Yoku, the Japanese art of forest bathing.</p>
+
+  <div class="main-photo">
+    <img src="images/meditation_1500.jpg" alt="Méditation" style="max-width:700px; width:100%; height:auto; display:block; margin:0 auto;">
+  </div>
+
+  <div class="room-gallery">
+    <img src="images/meditation_room1.jpg" alt="Méditation en situation 1" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--light-stone);">
+    <img src="images/meditation_room2.jpg" alt="Méditation en situation 2" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--light-stone);">
+  </div>
+</section>
+
+<section class="artwork" id="oeuvre-22">
+  <div class="theme-tag">Nature &amp; forêt</div>
+  <h2 class="artwork-title">Sapins Jardin Botanique</h2>
+  <div class="meta-block">
+    20 x 24 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">745 $</span>
+  </div>
+
+  <p class="text-fr">Des sapins du Jardin botanique de Montréal, chargés de neige fraîche, se découpent en silhouettes sombres contre un ciel d'hiver bleuté et violacé. Cette application subtile des couleurs rappelle l'enfance et le temps des fêtes — une scène simple et silencieuse, presque méditative.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">Fir trees at the Montréal Botanical Garden, heavy with fresh snow, stand as dark silhouettes against a bluish, violet winter sky. This subtle use of colour evokes childhood and the holiday season — a simple, quiet scene, almost meditative.</p>
+
+  <div class="main-photo">
+    <img src="images/sapins-jardin-botanique_1500.jpg" alt="Sapins Jardin Botanique" style="max-width:700px; width:100%; height:auto; display:block; margin:0 auto;">
+  </div>
+
+  <div class="room-gallery">
+    <img src="images/sapins-jardin-botanique_room1.jpg" alt="Sapins Jardin Botanique en situation 1" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--light-stone);">
+    <img src="images/sapins-jardin-botanique_room2.jpg" alt="Sapins Jardin Botanique en situation 2" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--light-stone);">
+  </div>
+</section>
+
+<section class="artwork" id="oeuvre-23">
+  <div class="theme-tag">Nature &amp; forêt</div>
+  <h2 class="artwork-title">Lac Paradis</h2>
+  <div class="meta-block">
+    20 x 24 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">745 $</span>
+  </div>
+
+  <p class="text-fr">C'est toujours une bonne journée quand on peut faire de la raquette en forêt et trouver un lac qui porte son nom. Encadré de conifères verts et d'arbres dénudés aux teintes pourpres, ce lac gelé repose sous un ciel hivernal strié de bandes de lumière froide, ponctué de touches chaudes — le silence de l'hiver québécois, capturé avec un souci du détail presque en 3D.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">It's always a good day when a snowshoe walk through the forest leads to a lake that bears your own name. Framed by green conifers and bare trees in shades of purple, this frozen lake rests beneath a winter sky streaked with cool light, punctuated by warm touches — the silence of Québec winter, captured with an almost three-dimensional attention to detail.</p>
+
+  <div class="main-photo">
+    <img src="images/lac-paradis_1500.jpg" alt="Lac Paradis" style="max-width:700px; width:100%; height:auto; display:block; margin:0 auto;">
+  </div>
+
+  <div class="room-gallery">
+    <img src="images/lac-paradis_room1.jpg" alt="Lac Paradis en situation 1" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--light-stone);">
+    <img src="images/lac-paradis_room2.jpg" alt="Lac Paradis en situation 2" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--light-stone);">
+  </div>
+</section>
+
+<section class="artwork" id="oeuvre-24">
+  <div class="theme-tag">Nature &amp; forêt</div>
+  <h2 class="artwork-title">Catalpa</h2>
+  <div class="meta-block">
+    40 x 60 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">2 875 $</span>
+  </div>
+
+  <p class="text-fr">Ce catalpa vétéran du Jardin botanique de Montréal affiche fièrement le passage du temps, ses branches tordues déployées comme une signature dans un ciel rosé. Dénudé par l'hiver naissant, il devient ici un personnage à part entière — sculptural, patient, habité d'une présence presque humaine, capable de faire un effet monstre dans n'importe quel salon.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">This veteran catalpa tree at the Montréal Botanical Garden proudly bears the marks of time, its twisted branches unfurling like a signature against a rosy sky. Stripped bare by the coming winter, it becomes a character in its own right here — sculptural, patient, carrying an almost human presence, capable of making a striking impact in any living room.</p>
+
+  <div class="main-photo">
+    <img src="images/catalpa_1500.jpg" alt="Catalpa" style="max-width:700px; width:100%; height:auto; display:block; margin:0 auto;">
+  </div>
+
+  <div class="room-gallery">
+    <img src="images/catalpa_room1.jpg" alt="Catalpa en situation 1" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--light-stone);">
+    <img src="images/catalpa_room2.jpg" alt="Catalpa en situation 2" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--light-stone);">
+  </div>
+</section>
+
+<section class="artwork" id="oeuvre-25">
+  <div class="theme-tag">Nature &amp; forêt</div>
+  <h2 class="artwork-title">Friends for Life</h2>
+  <div class="meta-block">
+    60 x 40 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">2 875 $</span>
+  </div>
+
+  <p class="text-fr">Ce couple d'arbres enraciné au Jardin botanique de Montréal partage le sol et l'air, racines et branches entrelacées, uni pour la vie. L'un déploie un feuillage vert profond, l'autre un bleu argenté — deux essences différentes, debout ensemble depuis toujours, contre un ciel nocturne strié de bleu sombre.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">This pair of trees, rooted together at the Montréal Botanical Garden, shares soil and air, their roots and branches intertwined, united for life. One unfurls deep green foliage, the other a silvery blue — two different species, standing together as if they always had, against a night sky streaked with dark blue.</p>
+
+  <div class="main-photo">
+    <img src="images/friends-for-life_1500.jpg" alt="Friends for Life" style="max-width:700px; width:100%; height:auto; display:block; margin:0 auto;">
+  </div>
+
+  <div class="room-gallery">
+    <img src="images/friends-for-life_room1.jpg" alt="Friends for Life en situation 1" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--light-stone);">
+    <img src="images/friends-for-life_room2.jpg" alt="Friends for Life en situation 2" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--light-stone);">
+  </div>
+</section>
+
+<section class="artwork" id="oeuvre-26">
+  <div class="theme-tag">Nature &amp; forêt</div>
+  <h2 class="artwork-title">Takwakin</h2>
+  <div class="meta-block">
+    36 x 24 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">1 295 $</span>
+  </div>
+
+  <p class="text-fr">« Takwakin » signifie l'automne en langue innue. Le soleil chaud et bas à l'horizon éclaire le tapis de feuilles de la forêt, où le jaune ocre et l'orange brûlé teintent tout le mois d'octobre. Un éclat de lumière blanche perce entre les troncs sombres comme une étoile tombée au sol — le titre ancre cette toile dans le territoire et dans une mémoire qui précède l'arrivée des colons, la forêt nommée comme elle l'a toujours été.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">"Takwakin" means autumn in the Innu language. The warm, low sun on the horizon lights up the forest floor's carpet of leaves, where ochre yellow and burnt orange colour the entire month of October. A burst of white light breaks through the dark trunks like a fallen star — the title roots this painting in the land and in a memory that predates the arrival of settlers, the forest named as it has always been.</p>
+
+  <div class="main-photo">
+    <img src="images/takwakin_1500.jpg" alt="Takwakin" style="max-width:700px; width:100%; height:auto; display:block; margin:0 auto;">
+  </div>
+
+  <div class="room-gallery">
+    <img src="images/takwakin_room1.jpg" alt="Takwakin en situation 1" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--light-stone);">
+    <img src="images/takwakin_room2.jpg" alt="Takwakin en situation 2" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--light-stone);">
+  </div>
+</section>
+
+<section class="artwork" id="oeuvre-28">
+  <div class="theme-tag">Nature &amp; forêt</div>
+  <h2 class="artwork-title">La Grange</h2>
+  <div class="meta-block">
+    18 x 24 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">675 $</span>
+  </div>
+
+  <p class="text-fr">Une grange isolée dans un champ doré, sous un arbre généreux et un soleil placé bien en évidence dans le ciel — exactement comme tout le monde le dessinait à la maternelle, avant d'apprendre qu'il était « inapproprié » de le faire, comme un acteur qui regarde la caméra. Benoît aime contourner cette règle. Peut-être qu'il a encore cinq ans.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">A solitary barn stands in a golden field, beneath a generous tree and a sun placed in plain view in the sky — exactly as everyone drew it in kindergarten, before learning it was "inappropriate" to do so, like an actor looking straight into the camera. Benoît likes to bend that rule. Maybe he's still five years old.</p>
+
+  <div class="main-photo">
+    <img src="images/la-grange_1500.jpg" alt="La Grange" style="max-width:700px; width:100%; height:auto; display:block; margin:0 auto;">
+  </div>
+
+  <div class="room-gallery">
+    <img src="images/la-grange_room1.jpg" alt="La Grange en situation 1" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--light-stone);">
+    <img src="images/la-grange_room2.jpg" alt="La Grange en situation 2" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--light-stone);">
+  </div>
+</section>
+
+<section class="artwork" id="oeuvre-29">
+  <div class="theme-tag">Nature &amp; forêt</div>
+  <h2 class="artwork-title">Winter</h2>
+  <div class="meta-block">
+    12 x 10 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">240 $</span>
+  </div>
+
+  <p class="text-fr">L'hiver à Montréal, lors d'une chute de neige dans La Petite-Patrie. Un petit arbre à feuilles caduques, recouvert de neige collante, attend que le soleil le fasse scintiller, devant un mur de brique rouge orné d'une corniche ouvragée — la maison typique du quartier semble rougir sous l'attention du peintre. Petit format, grand impact : la rencontre entre la nature et l'architecture urbaine montréalaise en plein hiver.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">Winter in Montréal, during a snowfall in La Petite-Patrie. A small deciduous tree, covered in clinging snow, waits for the sun to make it sparkle, set against a red brick wall trimmed with an ornate cornice — the neighbourhood's typical house seems to blush under the painter's attention. Small format, big impact: nature meeting Montréal's urban architecture in the depths of winter.</p>
+
+  <div class="main-photo">
+    <img src="images/winter_1500.jpg" alt="Winter" style="max-width:700px; width:100%; height:auto; display:block; margin:0 auto;">
+  </div>
+
+  <div class="room-gallery">
+    <img src="images/winter_room1.jpg" alt="Winter en situation 1" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--light-stone);">
+    <img src="images/winter_room2.jpg" alt="Winter en situation 2" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--light-stone);">
+  </div>
+</section>
+
+<section class="artwork" id="oeuvre-30">
+  <div class="theme-tag">Nature &amp; forêt</div>
+  <h2 class="artwork-title">Contre-jour</h2>
+  <div class="meta-block">
+    18 x 24 po.<br>
+    Acrylique sur toile galerie<br>
+    <span class="price">675 $</span>
+  </div>
+
+  <p class="text-fr">Cette scène champêtre capture toutes les teintes possibles du contre-jour, presque monochrome, par une chaude fin d'après-midi de fin d'hiver. On devine presque l'odeur humide de la fonte des neiges et la chaleur du soleil sur la peau, tandis que des branches dénudées se découpent en dentelle noire contre un soleil bas et aveuglant. Le bois ajoute une note terreuse à cette expérience véritablement immersive.</p>
+
+  <hr class="divider-dotted">
+
+  <p class="text-en">This countryside scene captures every possible shade of backlight, almost monochrome, on a warm late-winter afternoon. You can almost smell the damp scent of melting snow and feel the warmth of the sun on your skin, as bare branches cut a black lace silhouette against a low, blinding sun. The wood adds an earthy note to this truly immersive experience.</p>
+
+  <div class="main-photo">
+    <img src="images/contre-jour_1500.jpg" alt="Contre-jour" style="max-width:700px; width:100%; height:auto; display:block; margin:0 auto;">
+  </div>
+
+  <div class="room-gallery">
+    <img src="images/contre-jour_room1.jpg" alt="Contre-jour en situation 1" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--light-stone);">
+    <img src="images/contre-jour_room2.jpg" alt="Contre-jour en situation 2" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--light-stone);">
+  </div>
+</section>
+
+</div>
+
+<footer class="site-footer">
+  Benoît Paradis &nbsp;·&nbsp; Peintre — Montréal &nbsp;·&nbsp; <a href="#theme1">Retour en haut</a>
+</footer>
+
+</body>
+</html>
